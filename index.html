@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Desenho para que as pessoas entendam: mapas, campanhas, sites e marcas para quem precisa explicar bem o que oferece.">
+<meta property="og:title" content="Pablo Trindade · Portfólio">
+<meta property="og:description" content="Desenho para que as pessoas entendam: mapas, campanhas, sites e marcas para quem precisa explicar bem o que oferece.">
+<meta property="og:image" content="https://pablotrindade.github.io/portfolio/img/mockup-mapa-externo.jpg">
+<meta property="og:url" content="https://pablotrindade.github.io/portfolio/">
+<meta property="og:type" content="website">
+<title>Portfólio Pablo Trindade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* Layout: grade de 12 colunas assimétrica, como prancha de projeto. Texto em coluna estreita, peças ocupando o resto; decisões ficam como anotações na margem e as medidas aparecem como cotas em traço fino de cobre (regra 3 da ALTRORA). Um mundo só, claro, sobre marfim; o case de alto padrão vira uma faixa escura porque o conteúdo pede. */
+:root {
+  color-scheme: light;
+  --marfim: #F1ECE3;
+  --papel: #E9E2D6;
+  --carvao: #242323;
+  --grafite: #57514B;
+  --traco: #CFC5B6;
+  --cobre: #A76C48;
+  --cobre-texto: #935F3F;
+  --ouro: #C2A36C;
+  --noite: #1A1919;
+  --noite-txt: #ECE6DC;
+  --noite-grafite: #A79E92;
+  --noite-traco: #3A3633;
+  --f-expressao: "Prata", "Didot", "Bodoni 72", Georgia, serif;
+  --f-info: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s6: 24px; --s8: 32px; --s12: 48px; --s16: 64px; --s24: 96px; --s32: 128px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scrollbar-color: var(--cobre) var(--papel); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  background: var(--marfim);
+  color: var(--carvao);
+  font: 400 16px/1.6 var(--f-info);
+  caret-color: var(--cobre);
+  -webkit-font-smoothing: antialiased;
+  font-kerning: normal;
+}
+::selection { background: var(--cobre); color: var(--marfim); }
+:focus-visible { outline: 1px solid var(--cobre); outline-offset: 4px; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .28em; text-decoration-color: var(--cobre); }
+a:hover { color: var(--cobre-texto); }
+h1, h2, h3 { margin: 0; font-weight: 400; text-wrap: balance; }
+p { margin: 0; }
+
+.folha {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 760px) { .folha { padding-left: max(48px, env(safe-area-inset-left, 0px)); padding-right: max(48px, env(safe-area-inset-right, 0px)); } }
+.grade { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s6); }
+.grade > * { grid-column: 1 / -1; min-width: 0; }
+
+/* cota: linha de dimensão com terminais, como em desenho técnico */
+.cota { display: flex; align-items: center; gap: var(--s3); color: var(--cobre-texto); font: 500 12px/1.2 var(--f-info); letter-spacing: .02em; font-variant-numeric: tabular-nums; }
+.cota::before, .cota::after { content: ""; flex: 1; height: 7px; border-top: 1px solid var(--cobre); margin-top: 6px; }
+.cota::before { border-left: 1px solid var(--cobre); }
+.cota::after { border-right: 1px solid var(--cobre); }
+.cota-v { writing-mode: vertical-rl; transform: rotate(180deg); flex-direction: row; }
+.cota-v::before, .cota-v::after { height: auto; width: 7px; border-top: 0; border-left: 1px solid var(--cobre); margin: 0; margin-left: 6px; }
+.cota-v::before { border-bottom: 1px solid var(--cobre); }
+.cota-v::after { border-top: 1px solid var(--cobre); border-right: 0; }
+
+/* topo */
+.topo { padding-block: var(--s6); }
+.topo .folha { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s4); font-size: 14px; }
+.topo nav { display: flex; gap: var(--s6); }
+.topo a { text-decoration: none; color: var(--grafite); }
+.topo a:hover { color: var(--carvao); }
+.assinatura { font: 400 18px/1 var(--f-expressao); color: var(--carvao) !important; }
+@media (max-width: 520px) { .topo nav a:not(:last-child) { display: none; } }
+
+/* abertura */
+.abertura { padding-block: var(--s12) var(--s24); }
+.abertura .grade { row-gap: var(--s12); align-items: end; }
+.abertura-texto { display: grid; gap: var(--s8); }
+.abertura h1 { font: 400 clamp(52px, 8.8vw, 120px)/.92 var(--f-expressao); letter-spacing: -.02em; }
+.abertura .tese { font-size: clamp(18px, 1.7vw, 22px); line-height: 1.45; max-width: 26em; }
+.abertura .tese + p { color: var(--grafite); max-width: 32em; }
+.abertura-fragmento { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--s3); }
+.abertura-fragmento figure { margin: 0; display: grid; gap: var(--s3); }
+.abertura-fragmento img { width: 100%; }
+.abertura-fragmento figcaption { font-size: 13px; color: var(--grafite); }
+@media (min-width: 900px) {
+  .abertura-texto { grid-column: 1 / span 6; align-self: end; }
+  .abertura-fragmento { grid-column: 8 / span 5; }
+}
+
+/* sumário em frase */
+.sumario { border-top: 1px solid var(--traco); }
+.sumario .folha { padding-block: var(--s6); font-size: 15px; color: var(--grafite); }
+.sumario a { color: var(--carvao); }
+
+/* case */
+.case { padding-block: var(--s24) var(--s32); }
+.case .grade { row-gap: var(--s16); }
+.case-titulo h2 { font: 400 clamp(44px, 7vw, 96px)/.95 var(--f-expressao); letter-spacing: -.015em; }
+.case-titulo .linha-fina { margin-top: var(--s4); font-size: clamp(18px, 1.6vw, 21px); color: var(--grafite); max-width: 28em; }
+.ficha { margin: 0; font-size: 13.5px; line-height: 1.45; align-self: end; }
+.ficha div { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: var(--s3); padding-block: var(--s2); border-top: 1px solid var(--traco); }
+.ficha div:last-child { border-bottom: 1px solid var(--traco); }
+.ficha dt { color: var(--grafite); }
+.ficha dd { margin: 0; }
+@media (min-width: 900px) {
+  .case-titulo { grid-column: 1 / span 7; }
+  .ficha { grid-column: 9 / span 4; }
+}
+
+.relato { display: grid; gap: var(--s4); font-size: 17px; max-width: 34em; }
+.notas { display: grid; gap: var(--s6); align-content: start; }
+.nota { font-size: 15px; line-height: 1.55; padding-left: var(--s6); position: relative; max-width: 30em; }
+.nota::before { content: ""; position: absolute; left: 0; top: .78em; width: 14px; border-top: 1px solid var(--cobre); }
+.nota b { font-weight: 600; }
+@media (min-width: 900px) {
+  .relato { grid-column: 1 / span 5; }
+  .notas { grid-column: 7 / span 6; padding-top: 4px; }
+}
+
+.prancha { display: grid; gap: var(--s3); }
+.prancha img { width: 100%; }
+.legenda { font-size: 13px; color: var(--grafite); }
+.ampliar { all: unset; cursor: zoom-in; display: block; }
+.ampliar:focus-visible { outline: 1px solid var(--cobre); outline-offset: 4px; }
+
+.detalhes { display: grid; gap: var(--s6); grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+.detalhes figure { margin: 0; display: grid; gap: var(--s2); }
+.detalhes figure:first-child { grid-column: span 2; }
+@media (min-width: 900px) {
+  .detalhes { grid-template-columns: 5fr 3fr 3fr; column-gap: var(--s8); }
+  .detalhes figure:first-child { grid-column: auto; }
+  .detalhes figure:nth-child(2) { margin-top: var(--s24); }
+  .detalhes figure:nth-child(3) { margin-top: var(--s12); }
+}
+
+.tira { display: grid; gap: var(--s3); }
+.tira-rolo { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(200px, 1fr); gap: var(--s3); overflow-x: auto; padding-bottom: var(--s3); scroll-snap-type: x mandatory; scrollbar-width: thin; }
+.tira-rolo figure { margin: 0; display: grid; gap: var(--s2); scroll-snap-align: start; }
+
+/* faixa escura */
+.noite { background: var(--noite); color: var(--noite-txt); scrollbar-color: var(--cobre) var(--noite); }
+.noite .linha-fina, .noite .ficha dt, .noite .legenda { color: var(--noite-grafite); }
+.noite .ficha div { border-color: var(--noite-traco); }
+.noite .cota { color: var(--ouro); }
+.noite .cota::before, .noite .cota::after, .noite .nota::before { border-color: var(--ouro); }
+.noite a { text-decoration-color: var(--ouro); }
+.stories { display: grid; gap: var(--s6); grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+.stories figure { margin: 0; display: grid; gap: var(--s2); }
+@media (min-width: 900px) {
+  .stories { grid-column: 1 / span 9; column-gap: var(--s8); }
+  .stories figure:nth-child(2) { margin-top: var(--s16); }
+  .stories figure:nth-child(3) { margin-top: var(--s32); }
+  .stories-cota { grid-column: 11 / span 2; align-self: stretch; display: flex; justify-content: center; }
+}
+@media (max-width: 899px) { .stories-cota { display: none; } }
+.contraponto { background: var(--marfim); color: var(--carvao); padding: var(--s8) var(--s6); display: grid; gap: var(--s8); }
+.contraponto .duo { display: grid; gap: var(--s4); grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+.contraponto figure { margin: 0; display: grid; gap: var(--s2); }
+.contraponto h3 { font: 400 clamp(28px, 3.2vw, 40px)/1.05 var(--f-expressao); }
+.contraponto p { color: var(--grafite); max-width: 30em; margin-top: var(--s3); }
+.contraponto .legenda { color: var(--grafite); }
+@media (min-width: 900px) { .contraponto { grid-template-columns: 4fr 7fr; align-items: end; padding: var(--s12); } }
+
+/* empreende */
+.tela { border: 1px solid var(--traco); background: #0E1A12; max-height: 640px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--cobre) #0E1A12; }
+.tela img { width: 100%; }
+.secoes { list-style: none; margin: var(--s6) 0 0; padding: 0; font-size: 15px; }
+.secoes li { padding-block: var(--s2); border-top: 1px solid var(--traco); }
+.secoes li:last-child { border-bottom: 1px solid var(--traco); }
+.ir { display: inline-block; margin-top: var(--s8); font-weight: 500; font-size: 16px; }
+@media (min-width: 900px) {
+  .empreende-texto { grid-column: 1 / span 4; }
+  .empreende-tela { grid-column: 6 / span 7; }
+}
+
+/* outras frentes: índice, como o de um livro */
+.frentes { background: var(--papel); padding-block: var(--s24); }
+.frentes h2 { font: 400 clamp(36px, 5vw, 64px)/1 var(--f-expressao); }
+.frentes .grade { row-gap: var(--s12); }
+.indice { list-style: none; margin: 0; padding: 0; }
+.indice li { display: grid; grid-template-columns: minmax(0, 1fr) 96px; gap: var(--s6); align-items: center; padding-block: var(--s4); border-top: 1px solid var(--traco); }
+.indice li:last-child { border-bottom: 1px solid var(--traco); }
+.indice .area { font-size: 13px; color: var(--grafite); }
+.indice .peca { font: 400 clamp(20px, 2vw, 26px)/1.2 var(--f-expressao); }
+.indice img { width: 96px; height: 96px; object-fit: cover; }
+@media (min-width: 760px) {
+  .indice li { grid-template-columns: 12em minmax(0, 1fr) 140px; }
+  .indice img { width: 140px; height: 104px; }
+}
+.frentes .rodape-nota { color: var(--grafite); font-size: 15px; max-width: 40em; }
+@media (min-width: 900px) {
+  .frentes h2 { grid-column: 1 / span 4; }
+  .indice, .frentes .rodape-nota { grid-column: 5 / span 8; }
+}
+
+/* contato */
+.contato { padding-block: var(--s32); }
+.contato .grade { row-gap: var(--s8); align-items: end; }
+.contato h2 { font: 400 clamp(44px, 7.4vw, 104px)/.95 var(--f-expressao); letter-spacing: -.015em; }
+.zap { display: grid; gap: var(--s4); justify-items: start; }
+.numero { font: 400 clamp(28px, 3.4vw, 42px)/1 var(--f-expressao); font-variant-numeric: tabular-nums; user-select: all; }
+.acoes { display: flex; flex-wrap: wrap; gap: var(--s4) var(--s8); align-items: baseline; font-size: 15px; }
+.copiar { all: unset; cursor: pointer; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .28em; text-decoration-color: var(--traco); color: var(--grafite); }
+.copiar:hover { color: var(--carvao); text-decoration-color: var(--cobre); }
+.copiar:focus-visible { outline: 1px solid var(--cobre); outline-offset: 4px; }
+@media (min-width: 900px) {
+  .contato h2 { grid-column: 1 / span 7; }
+  .zap { grid-column: 9 / span 4; }
+}
+.rodape { border-top: 1px solid var(--traco); }
+.rodape .folha { padding-block: var(--s6); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s2) var(--s6); font-size: 13px; color: var(--grafite); }
+
+/* ampliação */
+dialog { border: 0; padding: 0; width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh; background: var(--marfim); color: var(--carvao); }
+dialog::backdrop { background: var(--marfim); }
+.palco { width: 100%; height: 100%; overflow: auto; display: grid; place-items: center; padding: 64px 16px 16px; }
+.palco img { max-width: none; }
+.palco img.caber { max-width: 100%; max-height: calc(100vh - 80px); }
+.fechar { all: unset; cursor: pointer; position: fixed; top: calc(20px + env(safe-area-inset-top, 0px)); right: max(20px, env(safe-area-inset-right, 0px)); font-size: 14px; text-decoration: underline; text-underline-offset: .28em; text-decoration-color: var(--cobre); }
+.dica { position: fixed; top: calc(22px + env(safe-area-inset-top, 0px)); left: max(20px, env(safe-area-inset-left, 0px)); font-size: 12px; color: var(--grafite); }
+</style>
+
+<header class="topo">
+  <div class="folha">
+    <a class="assinatura" href="#inicio">Pablo Trindade</a>
+    <nav aria-label="Seções">
+      <a href="#casaliv">Trabalhos</a>
+      <a href="#frentes">Outras frentes</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="abertura">
+    <div class="folha grade">
+      <div class="abertura-texto">
+        <h1>Pablo<br>Trindade</h1>
+        <p class="tese">Desenho para que as pessoas entendam: mapas, campanhas, sites e marcas para quem precisa explicar bem o que oferece.</p>
+        <p>Diretor de arte e designer gráfico em Belém, com 13 anos de ofício. Em todas as peças desta página, a direção de arte e o design são meus.</p>
+      </div>
+      <div class="abertura-fragmento">
+        <span class="cota cota-v" aria-hidden="true">térreo</span>
+        <figure>
+          <img src="img/fragmento-terreo.jpg" alt="Fragmento da planta do térreo no mapa da CasaLiv 2026, com ambientes coloridos, números e a rota tracejada" width="1000" height="1000">
+          <figcaption>Fragmento do mapa da CasaLiv 2026. O trabalho completo está logo abaixo.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="sumario">
+    <div class="folha">Três trabalhos: o mapa da <a href="#casaliv">CasaLiv</a>, dois lançamentos da <a href="#platinum">Leal Moreira</a> e o site do <a href="#empreende">Empreende Brazil</a>.</div>
+  </div>
+
+  <!-- CasaLiv -->
+  <article class="case" id="casaliv">
+    <div class="folha grade">
+      <header class="case-titulo">
+        <h2>CasaLiv 2026</h2>
+        <p class="linha-fina">Um mapa para atravessar seis andares sem se perder.</p>
+      </header>
+      <dl class="ficha">
+        <div><dt>Cliente</dt><dd>CasaLiv, apresentada pela Leal Moreira</dd></div>
+        <div><dt>Peça</dt><dd>Mapa de experiências dobrável, Super A3, impresso frente e verso</dd></div>
+        <div><dt>Também</dt><dd>Posts de arquitetos e de tendências</dd></div>
+        <div><dt>Meu papel</dt><dd>Direção de arte e design do mapa, de ponta a ponta</dd></div>
+      </dl>
+
+      <div class="relato">
+        <p>A CasaLiv ocupou um prédio inteiro em Belém, do subsolo ao rooftop, com ambientes assinados por arquitetos, gastronomia e dezenas de marcas parceiras.</p>
+        <p>O visitante precisava saber onde estava, para onde ir e quem tinha assinado cada espaço. E precisava descobrir isso com o mapa numa mão e a atenção no ambiente.</p>
+      </div>
+      <div class="notas">
+        <p class="nota"><b>Cada andar tem nome.</b> Além do número, uma frase: Boas-vindas, Histórias que acolhem, Ideias que conectam. O percurso vira uma sequência de capítulos.</p>
+        <p class="nota"><b>Cor e rota sobre a planta.</b> Cada ambiente tem cor e número, ligados por uma rota tracejada. A cor forte sobre o fundo neutro existe para achar o caminho de relance.</p>
+        <p class="nota"><b>Hierarquia para as marcas.</b> Patrocinadores em níveis, gastronomia com texto próprio e uma faixa de foto que fecha cada painel com uma frase.</p>
+      </div>
+
+      <div class="prancha">
+        <span class="cota">Dobrado em sanfona · lado interno</span>
+        <img src="img/mockup-mapa-interno.jpg" alt="Mapa CasaLiv 2026 dobrado em sanfona, lado interno, sobre fundo claro com luz lateral" loading="lazy" width="2400" height="1500">
+      </div>
+      <div class="prancha">
+        <span class="cota">Dobrado em sanfona · lado externo</span>
+        <img src="img/mockup-mapa-externo.jpg" alt="Mapa CasaLiv 2026 dobrado em sanfona, lado externo com a capa e a gastronomia" loading="lazy" width="2400" height="1500">
+      </div>
+      <div class="prancha">
+        <span class="cota">Planificado para leitura · lado interno</span>
+        <button class="ampliar" type="button" data-src="img/mapa-verso.jpg" aria-label="Ampliar o lado interno do mapa"><img src="img/mapa-verso.jpg" alt="Lado interno do mapa CasaLiv 2026: boas-vindas, térreo, rooftop, 3º e 2º pavimentos" loading="lazy"></button>
+        <p class="legenda">Boas-vindas, térreo, rooftop, 3º e 2º pavimentos. Toque para ver em tamanho real.</p>
+      </div>
+      <div class="prancha">
+        <span class="cota">Planificado para leitura · lado externo</span>
+        <button class="ampliar" type="button" data-src="img/mapa-frente.jpg" aria-label="Ampliar o lado externo do mapa"><img src="img/mapa-frente.jpg" alt="Lado externo do mapa: gastronomia, 1º pavimento, subsolo, patrocinadores e capa" loading="lazy"></button>
+        <p class="legenda">Gastronomia, 1º pavimento, subsolo, patrocinadores e capa.</p>
+      </div>
+
+      <div class="detalhes">
+        <figure><button class="ampliar" type="button" data-src="img/mapa-terreo.jpg" aria-label="Ampliar painel do térreo"><img src="img/mapa-terreo.jpg" alt="Painel do térreo com planta, rota e legenda" loading="lazy"></button><figcaption class="legenda">Térreo: dez pontos e a rota de entrada.</figcaption></figure>
+        <figure><button class="ampliar" type="button" data-src="img/mapa-1pav.jpg" aria-label="Ampliar painel do 1º pavimento"><img src="img/mapa-1pav.jpg" alt="Painel do 1º pavimento, Histórias que acolhem" loading="lazy"></button><figcaption class="legenda">1º pavimento, Histórias que acolhem.</figcaption></figure>
+        <figure><button class="ampliar" type="button" data-src="img/mapa-gastro.jpg" aria-label="Ampliar painel de gastronomia"><img src="img/mapa-gastro.jpg" alt="Painel de gastronomia com as casas de cada andar" loading="lazy"></button><figcaption class="legenda">Gastronomia, andar por andar.</figcaption></figure>
+      </div>
+
+      <div class="tira">
+        <span class="cota">No feed, a mesma linguagem · role para o lado</span>
+        <div class="tira-rolo" tabindex="0" aria-label="Posts da campanha, role para o lado">
+          <figure><img src="img/casaliv-thais.jpg" alt="Post de arquiteta confirmada, Thais Toscano" loading="lazy"><figcaption class="legenda">Arquitetos confirmados</figcaption></figure>
+          <figure><img src="img/casaliv-tendencias.jpg" alt="Capa do carrossel Tendências presentes na CasaLiv" loading="lazy"><figcaption class="legenda">Tendências, capa</figcaption></figure>
+          <figure><img src="img/casaliv-ripado.jpg" alt="Slide sobre painéis ripados" loading="lazy"><figcaption class="legenda">Painéis ripados</figcaption></figure>
+          <figure><img src="img/casaliv-ladrilho.jpg" alt="Slide sobre ladrilhos hidráulicos" loading="lazy"><figcaption class="legenda">Ladrilhos hidráulicos</figcaption></figure>
+          <figure><img src="img/casaliv-sofa.jpg" alt="Slide sobre sofá curvo sob medida" loading="lazy"><figcaption class="legenda">Sofá curvo</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Leal Moreira -->
+  <article class="case noite" id="platinum">
+    <div class="folha grade">
+      <header class="case-titulo">
+        <h2>Uma construtora, dois públicos</h2>
+        <p class="linha-fina">LM Platinum Tower e LM Urban Flex, da Leal Moreira.</p>
+      </header>
+      <dl class="ficha">
+        <div><dt>Cliente</dt><dd>Leal Moreira</dd></div>
+        <div><dt>Peças</dt><dd>Stories de pré-lançamento e posts de feed para investidor</dd></div>
+        <div><dt>Meu papel</dt><dd>Direção de arte e design das duas linhas</dd></div>
+      </dl>
+
+      <div class="relato">
+        <p>Mesma marca, dois empreendimentos, dois leitores. O Platinum Tower é um lançamento corporativo de alto padrão. O Urban Flex fala com quem compra para alugar.</p>
+        <p>Em vez de aplicar a marca do mesmo jeito nos dois, cada linha ganhou o tom do seu público.</p>
+      </div>
+      <div class="notas">
+        <p class="nota"><b>Silêncio no alto padrão.</b> Preto, tipografia fina e espaçada e muito vazio. O produto aparece como arquitetura, sem selo de oferta.</p>
+        <p class="nota"><b>Um elemento que repete.</b> A moldura de canto chanfrado aparece em todas as telas do Platinum e vira a assinatura da série.</p>
+        <p class="nota"><b>Número como título.</b> As metragens, de 24 a 418 m², ocupam a tela inteira. Para quem escolhe sala comercial, o tamanho é a notícia.</p>
+      </div>
+
+      <div class="stories">
+        <figure><img src="img/platinum-fachada.jpg" alt="Story do LM Platinum Tower com a fachada" loading="lazy"><figcaption class="legenda">Fachada</figcaption></figure>
+        <figure><img src="img/platinum-servicos.jpg" alt="Story com os serviços do edifício em ícones de traço" loading="lazy"><figcaption class="legenda">Serviços</figcaption></figure>
+        <figure><img src="img/platinum-metragens.jpg" alt="Story com as metragens das salas em tipografia grande" loading="lazy"><figcaption class="legenda">Metragens</figcaption></figure>
+      </div>
+      <div class="stories-cota" aria-hidden="true"><span class="cota cota-v">stories · 1080 × 1920</span></div>
+
+      <div class="contraponto">
+        <div>
+          <h3>LM Urban Flex Bela Cintra</h3>
+          <p>Para o investidor, a mesma construtora muda o tom: azul da marca, título direto sobre localização e demanda, a faixa de cor da Leal Moreira no rodapé e um botão para falar com consultor.</p>
+        </div>
+        <div class="duo">
+          <figure><img src="img/urbanflex-feed.jpg" alt="Post do LM Urban Flex com o prédio e o botão Fale com um consultor" loading="lazy"><figcaption class="legenda">Chamada para consultor</figcaption></figure>
+          <figure><img src="img/urbanflex-sp.jpg" alt="Post sobre investir em São Paulo com a faixa de cores da construtora" loading="lazy"><figcaption class="legenda">Argumento de localização</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Empreende -->
+  <article class="case" id="empreende">
+    <div class="folha grade">
+      <header class="case-titulo">
+        <h2>Empreende Brazil Amazônia</h2>
+        <p class="linha-fina">Do layout ao site no ar.</p>
+      </header>
+      <dl class="ficha">
+        <div><dt>Cliente</dt><dd>Empreende Brazil Amazônia, realização NEX Empresarial</dd></div>
+        <div><dt>Peça</dt><dd>Site do evento</dd></div>
+        <div><dt>Meu papel</dt><dd>Design da página e HTML montado com apoio do Claude. Publicação pelo time de web.</dd></div>
+      </dl>
+
+      <div class="empreende-texto">
+        <div class="relato">
+          <p>O maior encontro de empreendedorismo da região Norte, em Belém, nos dias 26 e 27 de novembro de 2026. A página precisava vender ingresso e atrair expositor.</p>
+          <p>Desenhei a página inteira e montei o HTML. O time de web só precisou publicar.</p>
+        </div>
+        <ul class="secoes" aria-label="Seções da página, na ordem">
+          <li>Abertura com data e ingresso</li>
+          <li>O evento em números</li>
+          <li>Palestrantes confirmados</li>
+          <li>A edição anterior</li>
+          <li>Ingressos em dois níveis</li>
+          <li>Chamada para expositores</li>
+        </ul>
+        <a class="ir" href="https://empreendebrazilamazonia.com.br/" target="_blank" rel="noopener">Ver o site no ar: empreendebrazilamazonia.com.br</a>
+      </div>
+      <div class="empreende-tela prancha">
+        <span class="cota">Página inteira · role dentro do quadro</span>
+        <div class="tela" tabindex="0" aria-label="Página completa do site, role para ver"><img src="img/empreende-landing.jpg" alt="Layout completo do site do Empreende Brazil Amazônia, em verde escuro" loading="lazy"></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Outras frentes -->
+  <section class="frentes" id="frentes">
+    <div class="folha grade">
+      <h2>Outras frentes</h2>
+      <ul class="indice">
+        <li><span class="area">Design da informação</span><span class="peca">Missão 10K, plano de 7 dias em percurso</span><img src="img/hyeser.jpg" alt="Infográfico Missão 10K" loading="lazy"></li>
+        <li><span class="area">Conceito de campanha</span><span class="peca">WIN Future IA Day, a contagem regressiva vista de cima</span><img src="img/win-calendario.jpg" alt="Post Faltam 15 dias com o calendário visto de cima" loading="lazy"></li>
+        <li><span class="area">Embalagem</span><span class="peca">Morganti's Café, rótulo e modo de preparo</span><img src="img/morganti.jpg" alt="Embalagem kraft do Morganti's Café" loading="lazy"></li>
+        <li><span class="area">Embalagem</span><span class="peca">aminoFlow, sacola</span><img src="img/aminoflow.jpg" alt="Sacolas aminoFlow" loading="lazy"></li>
+        <li><span class="area">Editorial para personalidade</span><span class="peca">Retrospectiva do Círio, Paulo André Marques</span><img src="img/cirio.jpg" alt="Retrospectiva do Círio de Paulo André Marques" loading="lazy"></li>
+        <li><span class="area">Ponto de venda</span><span class="peca">Totens de evento, Leal Moreira</span><img src="img/totem.jpg" alt="Totem da Leal Moreira" loading="lazy"></li>
+        <li><span class="area">Vestuário</span><span class="peca">Uniforme da Federação de Taekwondo do Pará</span><img src="img/ftdepa.jpg" alt="Camiseta do uniforme da FTDEPA" loading="lazy"></li>
+      </ul>
+      <p class="rodape-nota">Também sistemas de campanha para produtos digitais e cenários para transmissão ao vivo.</p>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section class="contato" id="contato">
+    <div class="folha grade">
+      <h2>Tem algo para explicar bem?</h2>
+      <div class="zap">
+        <span class="numero" id="numero">(91) 98258-4688</span>
+        <div class="acoes">
+          <a href="https://wa.me/5591982584688" target="_blank" rel="noopener">Abrir no WhatsApp</a>
+          <button class="copiar" type="button" id="copiar">Copiar número</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="folha"><span>Pablo Trindade · Belém, Pará</span><span>Rascunho 2. Fonte e textos provisórios até a identidade da ALTRORA.</span></div>
+</footer>
+
+<dialog id="amplia" aria-label="Imagem ampliada">
+  <span class="dica">Toque na imagem para alternar entre caber na tela e tamanho real.</span>
+  <button class="fechar" type="button" id="fechar">Fechar</button>
+  <div class="palco"><img id="amplia-img" class="caber" alt=""></div>
+</dialog>
+
+<script>
+(function () {
+  var dlg = document.getElementById('amplia');
+  var img = document.getElementById('amplia-img');
+  document.querySelectorAll('.ampliar').forEach(function (b) {
+    b.addEventListener('click', function () {
+      img.src = b.dataset.src;
+      img.alt = b.querySelector('img').alt;
+      img.className = 'caber';
+      if (dlg.showModal) dlg.showModal();
+    });
+  });
+  img.addEventListener('click', function () { img.classList.toggle('caber'); });
+  document.getElementById('fechar').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target.classList.contains('palco')) dlg.close(); });
+
+  var btn = document.getElementById('copiar');
+  btn.addEventListener('click', function () {
+    var ok = function () { btn.textContent = 'Número copiado'; setTimeout(function () { btn.textContent = 'Copiar número'; }, 2000); };
+    var falha = function () {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('numero'));
+      var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Número selecionado';
+    };
+    try { navigator.clipboard.writeText('91982584688').then(ok, falha); } catch (e) { falha(); }
+  });
+})();
+</script>
